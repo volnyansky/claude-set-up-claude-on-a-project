@@ -1,10 +1,5 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project
-
-Starter Express API for the Claude Code course. A minimal REST service (`users`, `health`) backed by an in-memory store.
+A minimal REST service (`users`, `health`) backed by an in-memory store.
 
 ## Commands
 
@@ -27,3 +22,4 @@ CI (`.github/workflows/ci.yml`) runs `npm install`, `npm run lint`, and `npm tes
 - Data flow is strictly routes → `db/store.js`; add new data operations as functions in `store.js` rather than mutating arrays inline in a route.
 - Validate required fields and return `400` with `{ error: "..." }` before touching the store (see `POST /users` in `routes/users.js`); return `404` with the same shape when a lookup misses.
 - New resources follow the existing pattern: a router file in `routes/`, mounted in `server.js`, with its own section in `tests/`.
+- Use eslint to check files syntax
